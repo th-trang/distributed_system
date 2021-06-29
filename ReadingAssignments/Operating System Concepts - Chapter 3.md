@@ -36,6 +36,6 @@
 - Context-switch times are highly dependent on hardware support.
 ## Operations on Process
 ### Process Creation
-    The fork() and CreateProcess() system calls are used to create processes on UNIX and Windows systems, respectively.
+   The fork() and CreateProcess() system calls are used to create processes on UNIX and Windows systems, respectively.
 ### Process Termination
-    A process terminates when it finishes executing its final statement and asks the operating system to delete it by using the exit() system call.
+   A process terminates when it finishes executing its final statement and asks the operating system to delete it by using the exit() system call.

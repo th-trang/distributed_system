@@ -39,3 +39,22 @@
    The fork() and CreateProcess() system calls are used to create processes on UNIX and Windows systems, respectively.
 ### Process Termination
    A process terminates when it finishes executing its final statement and asks the operating system to delete it by using the exit() system call.
+## Interprocess Communication
+- Cooperating processes require an interprocess communication (ICP) mechanism that will allow them to exchange data.
+- There are 2 fundamental models of interprocess communication: shared memory and message passing.
+## IPC in Shared-Memory Systems
+- Interprocess communication using shared memory requires communicating processes to establich a regionn of shared memory.
+- Must have a buffer. Two types of buffers can be used: the unbounded buffer and the bounded buffer.
+## IPC in Message-Passing Systems
+- If processes P and W want to communicate, a communication link must exist between them. There are several methods for logically implementing a link and the send()/receive() operations:
+  - Direct or indirect communication
+  - Synchronous or asynchronous communication
+  - Automatic or explicit buffering
+## Examples of IPC Systems
+- POSIX Shared Memory
+- Mach Message Passing
+- Windows
+- Pipes
+## Communication in Client - Server Systems
+- Sockets: allow two processes on different machines to communicate over a network.
+- Remote procedure calls: RPCs abstract the concept of function (procedure) calls in such a way that a function can be invoked on another process that may reside on a seperate computer.

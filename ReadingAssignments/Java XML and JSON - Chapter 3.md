@@ -24,14 +24,14 @@
 - A DOM parser is also known as a document builder because of its dual role in parsing and creating XML documents.
 ## Obtain a DOM Parser/DocumentBuilder
 - Obtain a DOM parser/document builder by first instantiating DocumentBuilderFactory, by calling one of its newInstance() class methods:
- - DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+  - DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 - Behind the scenesm newInstance() follows an ordered lookup procedure to identify the DocumentBuilderFactory implementation class to load.
   - The procedure first examnines the javax.xml.persers.DocumentBuilderFactory system property
   - And chooses the Java platform's default DocumentBuilderFactory implementation class when no other class is found.
 - If an implementation class isnt available or cant be instantiated, newInstance() throws an instance of the FactoryConfigurationError class.
 - Otherwise, it instantitiates the class and returns its instance.
 - After obtaining a DocumentBuilderFactory instance, you can call various configuration methods to configure the factory.
-- -After the factory has been configured, call its DocumentBuilder newDocumentBuilder() method to return a document builder that supports the configuration
+- After the factory has been configured, call its DocumentBuilder newDocumentBuilder() method to return a document builder that supports the configuration
   - DocumentBuilder db = dbf.newDocumentBuilder();
 - If a document builder cannot be returned, this method throws a ParserConfigurationException instance.
 ## Parsing and Creating XML Documents

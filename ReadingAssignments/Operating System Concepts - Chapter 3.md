@@ -1,5 +1,5 @@
 # Chapter 3
-## Concept
+## Process Concept
 ### The Process
 - The process is a program in execution
 - The memory layout of a process is typically divided into multiple sections:

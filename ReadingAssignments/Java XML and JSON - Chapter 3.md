@@ -40,7 +40,7 @@
   - Node getFirstChild(): returns the node's first chhild.
   - Node getLastChild(): returns the node's last child.
 - Nodes declares 4 methods for modifying the tree
-  - Node insertBefore(Node newChild, Node refChild): inserts newCild before the existing node specified by refChild and returns newChild.
+  - Node insertBefore(Node newChild, Node refChild): inserts newChild before the existing node specified by refChild and returns newChild.
   - Node removeChild(Node oldChild): removes the child node identified by oldChild from the tree and returns oldChild.
   - Node replaceChild (Node newChild, Node oldChild): replaces oldChild with newChild and returns oldChild.
   - Node appendChild (Node newChild): adds newChild to the end of the current node’s child nodes and returns newChild.

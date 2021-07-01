@@ -18,3 +18,4 @@
   - **Resource sharing**: Processes can only share resources through techniques such as shared memory and message passing and must be arranged by the programmer. The benefit of sharing code and data is that it allows an application to have several different threads of activity within the same address space.
   - **Economy**:  it is significantly more time consuming to create and manage processes than threads.
   - **Scalability**: threads may be running in parallel on different processing cores. A single-threaded process can run on only one processor, regardless how many are available.
+## 4.2 Multicore Coding

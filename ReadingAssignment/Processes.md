@@ -1,0 +1,17 @@
+# PROCESS SCHEDULING
+- **Objective of multiprogramming**: to have some process running at all times, to maximize CPU unitlization.
+- **Objective of time sharing**: to switch the CPU among proceesses so frequently that users can interact with each program while it is running.
+- To meet these objectivesm the **process scheduler** selects an available process (possibly from a set of several available processes) for program execution on the CPU. For a single-process system, there will never be more than one running process, If there are more processes, the rest will have to wait until the CPU is free and can be rescheduled.
+## SCHEDULING QUEUES
+- As processes enter the system, they are put into a **job queue**, which consists of all processes in the system.
+- The processes are residing in main memory and are ready and waiting to execute are kept on a list called **the ready queue**.
+   - This queue is generally stored as a linked list.
+   - A ready-queue header contains pointers to the first and final PCBs in the list.
+   - Each PCB includes a pointer field that points to the next PCB in the ready queue.
+- The list of processes waiting for a particular I/O device is called a **device queue**.
+- **Queueing diagram**: a representation of process scheduling.
+##SCHEDULERS
+- The operating system must select processes from the scheduling queues. The selection process is carried out by the appropriate **scheduler**.
+- Often, in a batch sys, more processes are submitted than can be executed. These processes are spooled to a mass-storage device, where they are kept for later execution.
+  - The **long-term scheduler**, or **job scheduler**, selects processes from the pool and loads them into memory for execution.
+  - The **short-term scheduler** or **CPU scheduler**, selects from among the processes that are ready to execute and allocates the CPU to one of them.

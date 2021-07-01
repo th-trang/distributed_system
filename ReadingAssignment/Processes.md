@@ -15,3 +15,9 @@
 - Often, in a batch sys, more processes are submitted than can be executed. These processes are spooled to a mass-storage device, where they are kept for later execution.
   - The **long-term scheduler**, or **job scheduler**, selects processes from the pool and loads them into memory for execution.
   - The **short-term scheduler** or **CPU scheduler**, selects from among the processes that are ready to execute and allocates the CPU to one of them.
+  - The short-term scheduler execute more frequently, at least once every 100 milliseconds.
+  - The long-term scheduler execute much less frequently; minutes may seperate the creation of one new process and the next.
+  - The long-term scheduler controls the **degree of multiprogramming** (the number of processes in memory). If the degree of multiprogramming is stable, then the average rate of process creation must be equal to the average departure rate of processes leaving the system.
+   - Processes can be described in 2 ways:
+      - **I/O-bound process**: spends more time doing I/O than doing computations.
+      - **CPU-bound process**: generates I/o requests infrequently, using more time doiung computations

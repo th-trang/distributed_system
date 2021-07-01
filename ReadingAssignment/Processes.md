@@ -21,3 +21,7 @@
    - Processes can be described in 2 ways:
       - **I/O-bound process**: spends more time doing I/O than doing computations.
       - **CPU-bound process**: generates I/o requests infrequently, using more time doiung computations
+    - It is important that long-term scheduler select a good mix of I/O-bound process and CPU-bound process.
+      - if all processes are I/O bound, the ready queue will almost always be empty, and the short-term scheduler will have little to do.
+      - If all processes are CPU bound, the I/O waiting queue will almost always be empty, devices will go unused, and again the system will be unbalanced.
+    

@@ -19,3 +19,16 @@
   - **Economy**:  it is significantly more time consuming to create and manage processes than threads.
   - **Scalability**: threads may be running in parallel on different processing cores. A single-threaded process can run on only one processor, regardless how many are available.
 ## 4.2 Multicore Coding
+- In respond to the need for more computing performance, multiple computing cores are placed on a single chip. Each core appears á a seperate processor. We call **system multicore** or **multiprocessor systems**.
+### 4.2.1 Programming Challenges
+- There are 5 areas present challenges in programming for multicore systems:
+  - Identifying tasks
+  - Balance
+  - Data splitting
+  - Data dependency
+  - Testing and debugging
+### 4.2.2 Types of Parallelism
+There are 2 types:
+  - Data parallelism: distributing subsets of the same data across multiple computing cores and performing the same operation on each core.
+  - Task parallelism: distributing tasks (threads) across multiple computing cores.
+## 4.3 Multithreading Models

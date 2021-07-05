@@ -32,3 +32,15 @@ There are 2 types:
   - Data parallelism: distributing subsets of the same data across multiple computing cores and performing the same operation on each core.
   - Task parallelism: distributing tasks (threads) across multiple computing cores.
 ## 4.3 Multithreading Models
+- Support for threads provided at the user level, for **user threads**, or by the kernel, for **kernek threads**.
+  - User threads are supported above the kernel threads and are managed without kernal support.
+  - Kernel threads are supoorted and managed directly by the operating systen.
+- A relationship must exist between user threads and kernel threads. 3 common ways of establishing:
+  - Many-to-one model
+  - One-to-one model
+  - Many-to-many model
+### 4.3.1 Many-to-one Model
+- Maps many user-level threads to one kernel thread.
+- Thread management is done by the thread library in user space
+- The entire process will block if a thread makes a blocking system call
+- Because only one thread can access the kernel, multiple threads are unable to run in parallel on multicore systems.

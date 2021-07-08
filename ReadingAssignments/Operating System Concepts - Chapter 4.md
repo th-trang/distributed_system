@@ -32,7 +32,7 @@ There are 2 types:
   - Data parallelism: distributing subsets of the same data across multiple computing cores and performing the same operation on each core.
   - Task parallelism: distributing tasks (threads) across multiple computing cores.
 ## 4.3 Multithreading Models
-- Support for threads provided at the user level, for **user threads**, or by the kernel, for **kernek threads**.
+- Support for threads provided at the user level, for **user threads**, or by the kernel, for **kernel threads**.
   - User threads are supported above the kernel threads and are managed without kernal support.
   - Kernel threads are supoorted and managed directly by the operating systen.
 - A relationship must exist between user threads and kernel threads. 3 common ways of establishing:
@@ -44,3 +44,24 @@ There are 2 types:
 - Thread management is done by the thread library in user space
 - The entire process will block if a thread makes a blocking system call
 - Because only one thread can access the kernel, multiple threads are unable to run in parallel on multicore systems.
+### 4.3.2 One-to-one Model
+- Maps each user thread to a kernel thread
+- Provides more concurrency than the many-to-one model by allowing another thread to run when a thread makes a blocking system call.
+- Allows multiple threads to run in parallel on multiprocessors.
+- **Drawback**: restiction in the number of threads supported by the system.
+###  4.3.3 Many-to-Many Model
+- Multiplexes many user-level threads to a small or equal number of kernel threads.
+- **Advantages**
+  - developers can create as many user threads as necessary.
+  - when a thread performs a blocking system call, the kernel can schedule another thread for execution.
+## 4.4 Thread Libraries
+- Provides the programmer with an API for creating and managing threads
+- 2 primary ways of implementinga thread library:
+  - Providing a library entirely in user space with no kernel support.
+    - All code and data structures for the library exist in user space (Invoking a function in the library results in a local function call in user space and not a system call).
+  - Implement a kernel-level library supported directly by the OS. 
+    - Code and data structures for the lib exist in kernal space. Invoking a function in the APU for the library typically results in a sys call to the kernel.
+- 3 main thread libraries:
+  - POSIX Pthreads: provides as either a user-level or a kernel-level lib
+  - Windows: is a kernel-lib available on Windows systems
+  - Java: using a thread lib available on the host sys (on Windows sys, Java threads uses the Windows API, on UNIX and Linux use Pthreads).

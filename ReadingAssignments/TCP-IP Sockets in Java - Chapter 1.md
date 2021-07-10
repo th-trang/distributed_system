@@ -20,6 +20,17 @@
   - Both are called *end-to-end transport protocols* because they carry data all the way from one program to another
   - *TCP* provides *reliable byte-stream channels* because it is designed to detect and recover from the losses, dupliation and other errors that may occur in the host-to-host channel. It is a *connection-oriented protocol*: beofore using it to communicate, two programs must first establish a TCP connection, which involves completing an exchange of *handshake messages* between the 2 communicating computers.
   - *UDP* does not attempt to recover from errors, it simply ectends the IP best-effort-datagram service so that it works between application programs.
+## 1.2 About Addresses
+- Before a program can communicate with another program, there must be sth to identify the other program. It takes two pieces of information: an *Interent addresses* used by IP, and a *port number*.
+- **Internet Addresses** are binary numbers. They come in 2 versions:
+  - *Version 4 (IPv4)*: 32 bits long, written as a group of four decimal numbers seperated by periods (or *dotted-quad*). The four numbers in a dotted-quad string represent the contents of four bytes of the Internet address - thus, each is a number bwtween 0 and 255 (ex: 10.1.2.3)
+  - *Version 6 (IPv6)*: 128 bits long, represented as groups of hexadecimal digits, seperated by colons (ex: 2000:fdb8:0000:0000:0001:00ab:853c:39a1). Each group of digits representes two bytes of the address, leading zeros may be obmitted. Consecutive groups that contain only zeros may be obmitted altogether but this can only done once in any address. (ex: 2000:fdb8::1:00ab:853c:39a1).
+- The Internet address is the street address whereas thr port corresponds to the room number. Port nummbers are 16-bit unsigned binary numbers, so each one is in the range 1 to 65,535 (0 is reserved).
+- Cetain special-purpose addresses are defined
+  - **Loopback interface**, a virtual device that simply echoes transmitted packets right back to the sender. It is useful for testing because packets sent to that addr. are immediately returned back to the destination. It is present on every host and can be used when computer has no connection to the network. The loopback address for IPv4 is *127.0.0.1*, for IPv6 is *0:0:0:0:0:0:0:1*
+  - **Private use**: start with 10 or 192.168, as well as those whose first number is 172 and whose second number is between 16 and 31, applied for IPv4 addresses. They were originally designated for private networks, often used in home and small offices that are connected to the Internet through a *network address translation (NAT)* device.
+  - **Link-local** or **autoconfiguration** addresses. For IPv4, addresses begin with 169.254. For IPv6, any addresses whose first 16-bit chunk starts with FE8. Such addresses can only be used for communication between hosts connected to the same network, routers will not forward them.
+  - **Multicast addresses**: Whereas regular IP (sometimescalled “unicast”) addresses refer to a single destination, multicast addresses potentially refer to an arbitrary number of destinations. In IPv4, multicast addresses in dotted-quad format have a first number inthe range 224 to 239. In IPv6, multicast addresses start with FF
  
          
   

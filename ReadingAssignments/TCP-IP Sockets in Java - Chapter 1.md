@@ -30,7 +30,14 @@
   - **Loopback interface**, a virtual device that simply echoes transmitted packets right back to the sender. It is useful for testing because packets sent to that addr. are immediately returned back to the destination. It is present on every host and can be used when computer has no connection to the network. The loopback address for IPv4 is *127.0.0.1*, for IPv6 is *0:0:0:0:0:0:0:1*
   - **Private use**: start with 10 or 192.168, as well as those whose first number is 172 and whose second number is between 16 and 31, applied for IPv4 addresses. They were originally designated for private networks, often used in home and small offices that are connected to the Internet through a *network address translation (NAT)* device.
   - **Link-local** or **autoconfiguration** addresses. For IPv4, addresses begin with 169.254. For IPv6, any addresses whose first 16-bit chunk starts with FE8. Such addresses can only be used for communication between hosts connected to the same network, routers will not forward them.
-  - **Multicast addresses**: Whereas regular IP (sometimescalled “unicast”) addresses refer to a single destination, multicast addresses potentially refer to an arbitrary number of destinations. In IPv4, multicast addresses in dotted-quad format have a first number inthe range 224 to 239. In IPv6, multicast addresses start with FF
+  - **Multicast addresses**: Whereas regular IP (sometimescalled “unicast”) addresses refer to a single destination, multicast addresses potentially refer to an arbitrary number of destinations. In IPv4, multicast addresses in dotted-quad format have a first number inthe range 224 to 239. In IPv6, multicast addresses start with FF.
+## 1.3 About Names
+- Internet protocols deal with addresses (binary numbers), not names. The use of names is a convenience feature for couple of reasons:
+  - Names are easier for humans to remember that dotted-quads (IPv4) or hexadecimal digits (IPv6)
+  - Names provide a level of indirection, which insulates users from IP addresses changes.
+- The name-resolution service can access info from a wide variety of sources. 2 primary sources are
+  - The *Domain Name System (DNS)*: a distributed database that maps *domain names* to Internet addresses and other info. DNS protocol allows hosts connected to the Internet to retrieve info from that database using TCP or UDP.
+  - *Local configuration databases* are generally OS-specific mechanisms for local name-to-Internet address mappings.
  
          
   

@@ -38,7 +38,17 @@
 - The name-resolution service can access info from a wide variety of sources. 2 primary sources are
   - The *Domain Name System (DNS)*: a distributed database that maps *domain names* to Internet addresses and other info. DNS protocol allows hosts connected to the Internet to retrieve info from that database using TCP or UDP.
   - *Local configuration databases* are generally OS-specific mechanisms for local name-to-Internet address mappings.
- 
+## 1.4 Clients and Servers
+- The terms *client* and *server* refer to these roles: the client program initiates communication, while the server program waits passively for and then responds to clients that contact it.
+- The client-server distinction is important because the client needs to know the server's address and port (but not vice versa). With the sockets API, the server can learn the client's address info when it receives the initial communication from the client.
+- The client finds out a server's IP address and port number by knowing the name of the server it wants and using the name-resolution service to learn the corresponding Internet address. Finding a server's port is a different story. In principle, server can use any port. But in the Internet, there is a convention of assigning well-known port numbers to certain applications controlled by the *Internet Assigned Number Authority (IANA)*
+## 1.5 What is a Socket?
+- A socket is an abstraction through which an application may send and receive data. It allows an application to plug unto the network and communicate with other applications that are plugged into the same network. Information written to the socket can be read by an application on a different machine and vice versa.
+- Different types of sockets correspond to different underlying protocol suites and different stacks of protocols within a suite. 
+- The main type of sockets in TCP/IP today are *stream sockets* and *datagram sockets*. 
+  - **Stream sockets** use TCP as the end-to-end protocol (with IP underneath) and thus provide a reliable byte-stream service. A TCP/IP stream socket represents one end of a TCP connection.
+  - **Datagram sockets** use UDP (with IP underneath) and thus provide a best-effort datagram service that applicatopns can use to send individual messages upto about 65,500 bytes in length.
+- A TCP/IP socket is uniquely identified by an Internet address, an end-to-end protocol (TCP and UDP) and a port number.
          
   
 

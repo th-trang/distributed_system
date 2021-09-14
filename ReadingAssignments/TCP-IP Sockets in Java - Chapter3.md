@@ -5,7 +5,7 @@
   - The idea of bitmap is that each of the bits of an integer type can encode one boolean value - 0 representing false and 1 representing true.
 ## 3.2 Composing I/O Streams
 - Java's stream classes can be composed to provide powerful capabilities.
-  - We can wrap the **OutputStream** of a **Socket* instance in a **BufferedOutputStream** instance to improve performance by buffering bytes temporarily and flushing them to the underlying channel all at once.
+  - We can wrap the **OutputStream** of a **Socket** instance in a **BufferedOutputStream** instance to improve performance by buffering bytes temporarily and flushing them to the underlying channel all at once.
    - We can then wrap that instance in a **DataOUtputStream** to send premitive data types.
 --------------------------------------------------------------------------------------------------------
        Socket socket = new Socket (server, port);

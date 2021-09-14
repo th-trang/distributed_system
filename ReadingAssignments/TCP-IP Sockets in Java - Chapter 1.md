@@ -2,7 +2,7 @@
 
 ## 1.1. Network, Packets and Protocols
 - A computer network consists of machines interconnected by communication. Those machines are *hosts* and *routers* 
-  - **Hosts** are computer that run applications. The application programs running on hosts are thr real "users" of the network.
+  - **Hosts** are computer that run applications. The application programs running on hosts are **the real "users" of the network**.
   - **Routers** are machines whose job is to relay (or forward) *information* from 1 communication channel to another.
   - **A Communication channel** is a means of conveying sequences of bytes from one host to another, may be wired (Ethernet), may be wireless (Wifi) or other connections.
   - **Information**: sequences of bytes that are constructed and interpreted by programs.

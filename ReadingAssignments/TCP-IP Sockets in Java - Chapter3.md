@@ -8,8 +8,8 @@
   - We can wrap the **OutputStream** of a **Socket* instance in a **BufferedOutputStream** instance to improve performance by buffering bytes temporarily and flushing them to the underlying channel all at once.
    - We can then wrap that instance in a **DataOUtputStream** to send premitive data types.
 --------------------------------------------------------------------------------------------------------
-      - Socket socket = new Socket (server, port);
-      - DataOutputStream out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
+       Socket socket = new Socket (server, port);
+       DataOutputStream out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
 -------------------------------------------------------------------------------------------------------
 ## 3.3 Framing and Parsing
 

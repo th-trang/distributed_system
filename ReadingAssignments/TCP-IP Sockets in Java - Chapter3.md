@@ -1,4 +1,4 @@
-#CHAPTER 3: SENDING AND RECEIVING DATA
+# CHAPTER 3: SENDING AND RECEIVING DATA
 ## 3.1 Encoding Information
 - Bytes of infomation can be transmitted through a socket by writing them to an **OutputStream (associated with a Socket)** or encapsulating them in a **DatagramPacket (which is then sent via a DatagramSocket)**. However, the only data types to which these operations can be applied are bytes and arrays of bytes. Therefore, all variable types (ints, longs, chars,...) must be converted to byte arrays.
 - *Bitmaps* are a very compact way to encode boolean information. 

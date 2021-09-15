@@ -10,7 +10,7 @@
   2) Defining a class that implements the **Runnable** interface with a **run()** method that performs the task and passing an instance of that class to the **Thread** constructor. This approach is always applicable.
 -----------------------
   interface Runnable {
-    void run();
+    - void run();
   }
 ------------------------
  - In either case, the new thread does not begin execution until it **start()** method is invoked.
